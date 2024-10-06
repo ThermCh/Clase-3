@@ -57,25 +57,76 @@ public class Clase3 {
 
         }
         JOptionPane.showMessageDialog(null, tabla);
-         */
+        
         //Ejercicio 3
-        int contador = 0;
-        String triangulo = "*";
+        int contador = 3;
+        String triangulo = "";
         //Solicitar y convertir datos
         contador = Integer.parseInt(JOptionPane.showInputDialog("Cuantas filas va a tener el triangulo"));
 
-        //Cantidad de filas
-        for (int i = 0; i < contador - 1; i++) {
+        //Cantidad de columnas
+        for (int i = 0; i < contador; i++) {
 
-            //Repetir * en la misma linea
-            while (i < contador) {
-                triangulo = "*" + "\n";
-                JOptionPane.showMessageDialog(null, triangulo);
+            //Repetir * en la misma fila
+            for (int j = 0; j < i + 1; j++) {
+                triangulo += "*";
+            }
+            triangulo += "\n";
+        }
+        JOptionPane.showMessageDialog(null, triangulo);
+
+       
+        
+        //Ejercicio 4
+        String numbers="";
+        int numSquare=0;
+        for (int i = 20; i < 31; i++) {
+            numSquare=i*i;
+            numbers+="El numero es: "+i+" Al cudrado es: "+ numSquare+"\n";
+            
+        }
+        JOptionPane.showMessageDialog(null, numbers);
+         */
+        //Ejercicio 5
+        int students = 0;
+        int noteHi = 0;
+        int noteLow = 100;
+        int average = 0;
+        int studentApp = 0;
+        //Variable usar para comparar
+        int note = 0;
+
+        //Variable para sacar el promedio
+        int noteAverage = 0;
+
+        //Solicitar cantidad estudiantes
+        students = Integer.parseInt(JOptionPane.showInputDialog("Cuantos estudiantes son? "));
+
+        //Solicitar informacion de cada estudiantes
+        for (int i = 0; i < students; i++) {
+            note = Integer.parseInt(JOptionPane.showInputDialog("Cual es la nota del estudiante? "));
+            noteAverage += note;
+
+        //Buscar Nota Mayor
+            if (note > noteHi) {
+                noteHi = note;
+            }
+        //Buscar nota menor
+            if (note < noteLow) {
+                noteLow = note;
+            }
+
+        //Cantidad estudiantes aprovados
+            if (note >= 69) {
+                studentApp++;
 
             }
 
+        //Promedio 
+            average=noteAverage/students;
         }
-
+        JOptionPane.showMessageDialog(null, "Los estudiantes aprovados son: "+studentApp+" \n La nota mas alta es: "+noteHi+" \n La nota mas baja es: "+noteLow+" \nY el promedio es: "+noteAverage);
+        
     }
 
 }
