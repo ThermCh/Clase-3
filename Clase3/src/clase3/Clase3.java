@@ -86,7 +86,7 @@ public class Clase3 {
             
         }
         JOptionPane.showMessageDialog(null, numbers);
-         */
+         
         //Ejercicio 5
         int students = 0;
         int noteHi = 0;
@@ -126,7 +126,51 @@ public class Clase3 {
             average=noteAverage/students;
         }
         JOptionPane.showMessageDialog(null, "Los estudiantes aprovados son: "+studentApp+" \n La nota mas alta es: "+noteHi+" \n La nota mas baja es: "+noteLow+" \nY el promedio es: "+noteAverage);
+        */
+        //Ejercicio 6
+        boolean students = true;
+        int studentsAmoun=0;
+        int noteHi = 0;
+        int noteLow = 100;
+        int average = 0;
+        int studentApp = 0;
+        //Variable usar para comparar
+        int note = 0;
+
+        //Variable para sacar el promedio
+        int noteAverage = 0;
+
         
+
+        //Solicitar informacion de cada estudiantes //Infinito
+        while (students) {
+            studentsAmoun=+1;
+            note = Integer.parseInt(JOptionPane.showInputDialog("Cual es la nota del estudiante? "));
+            noteAverage += note;
+
+        //Buscar Nota Mayor
+            if (note > noteHi) {
+                noteHi = note;
+            }
+        //Buscar nota menor
+            if (note < noteLow) {
+                noteLow = note;
+            }
+
+        //Cantidad estudiantes aprovados
+            if (note >= 69) {
+                studentApp++;
+
+            }
+        //Terminar Ciclo
+            if(note<=69){
+                students=false;
+            }
+
+        //Promedio 
+            average=noteAverage/studentsAmoun;
+        }
+        JOptionPane.showMessageDialog(null, "Los estudiantes aprovados son: "+studentApp+" \n La nota mas alta es: "+noteHi+" \n La nota mas baja es: "+noteLow+" \nY el promedio es: "+noteAverage);
     }
 
 }
